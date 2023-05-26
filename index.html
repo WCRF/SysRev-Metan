@@ -8,8 +8,18 @@
             padding: 10px;
         }
 
-        .navigation a {
+        .navigation ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navigation li {
+            display: inline;
             margin-right: 10px;
+        }
+
+        .navigation a {
             text-decoration: none;
             color: #333;
             font-weight: bold;
@@ -18,10 +28,12 @@
 </head>
 <body>
     <div class="navigation">
-        <a href="#mmd">I to MMD</a>
-        <a href="#endometrial">I to Endo Ca</a>
-        <a href="#ovarian">I to Ovarian Ca</a>
-        <a href="#breast">I to Breast Ca</a>
+        <ul>
+            <li><a href="#mmd">I to MMD</a></li>
+            <li><a href="#endometrial">I to Endo Ca</a></li>
+            <li><a href="#ovarian">I to Ovarian Ca</a></li>
+            <li><a href="#breast">I to Breast Ca</a></li>
+        </ul>
     </div>
 
     <h1>My GitHub Page</h1>
