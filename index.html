@@ -44,6 +44,7 @@
             font-size: 16px;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
     <script>
         function showSection(sectionId) {
             // Hide all sections
@@ -55,6 +56,12 @@
             // Show selected section
             var section = document.getElementById(sectionId);
             section.classList.add("active");
+
+            // Convert Markdown to HTML and update content
+            var converter = new showdown.Converter();
+            var markdownContent = document.getElementById(sectionId + "-markdown").innerHTML;
+            var htmlContent = converter.makeHtml(markdownContent);
+            section.innerHTML = htmlContent;
         }
     </script>
 </head>
@@ -71,26 +78,16 @@
     <div class="section" id="mmd">
         <div id="mmd-markdown" style="display: none;">
             {% include i_to_mmd.md %}
+        </div>
+    </div>
 
     <div class="section" id="endometrial">
-        <h2>I to Endo Ca</h2>
-        <p>Content related to Intermediate exposure to Endometrial Cancer goes here.</p>
+        <div id="endometrial-markdown" style="display: none;">
+            {% include i_to_endo_ca.md %}
+        </div>
     </div>
 
     <div class="section" id="ovarian">
-        <h2>I to Ovarian Ca</h2>
-        <p>Content related to Intermediate exposure to Ovarian Cancer goes here.</p>
-    </div>
-
-    <div class="section" id="breast">
-        <h2>I to Breast Ca</h2>
-        <p>Content related to Intermediate exposure to Breast Cancer goes here.</p>
-    </div>
-
-    <script>
-        // Show the first section by default
-        var defaultSection = document.getElementById("mmd");
-        defaultSection.classList.add("active");
-    </script>
-</body>
-</html>
+        <div id="ovarian-markdown" style="display: none;">
+            {% include i_to_ovarian_ca.md %}
+       
