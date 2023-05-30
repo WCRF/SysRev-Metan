@@ -56,12 +56,13 @@
             // Show selected section
             var section = document.getElementById(sectionId);
             section.classList.add("active");
+        }
 
-            // Convert Markdown to HTML and update content
+        function convertMarkdownToHTML(markdownContent, targetElementId) {
             var converter = new showdown.Converter();
-            var markdownContent = document.getElementById(sectionId + "-markdown").innerHTML;
             var htmlContent = converter.makeHtml(markdownContent);
-            section.innerHTML = htmlContent;
+            var targetElement = document.getElementById(targetElementId);
+            targetElement.innerHTML = htmlContent;
         }
     </script>
 </head>
@@ -76,18 +77,31 @@
     </div>
 
     <div class="section" id="mmd">
-        <div id="mmd-markdown" style="display: none;">
-            {% include i_to_mmd.md %}
-        </div>
+        <h2>I to MMD</h2>
+        <div id="mmd-content"></div>
     </div>
 
     <div class="section" id="endometrial">
-        <div id="endometrial-markdown" style="display: none;">
-            {% include i_to_endo_ca.md %}
-        </div>
+        <h2>I to Endo Ca</h2>
+        <div id="endometrial-content"></div>
     </div>
 
     <div class="section" id="ovarian">
-        <div id="ovarian-markdown" style="display: none;">
-            {% include i_to_ovarian_ca.md %}
-       
+        <h2>I to Ovarian Ca</h2>
+        <div id="ovarian-content"></div>
+    </div>
+
+    <div class="section" id="breast">
+        <h2>I to Breast Ca</h2>
+        <div id="breast-content"></div>
+    </div>
+
+    <script>
+        // Convert Markdown to HTML and update content
+        convertMarkdownToHTML(`{% include i_to_mmd.md %}`, "mmd-content");
+        convertMarkdownToHTML(`{% include i_to_endo_ca.md %}`, "endometrial-content");
+        convertMarkdownToHTML(`{% include i_to_ovarian_ca.md %}`, "ovarian-content");
+        convertMarkdownToHTML(`{% include i_to_breast_ca.md %}`, "breast-content");
+    </script>
+</body>
+</html>
