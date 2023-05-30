@@ -27,6 +27,11 @@
 
         .section {
             padding: 20px;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
         }
 
         .section h2 {
@@ -39,14 +44,27 @@
             font-size: 16px;
         }
     </style>
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            var sections = document.getElementsByClassName("section");
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.remove("active");
+            }
+
+            // Show selected section
+            var section = document.getElementById(sectionId);
+            section.classList.add("active");
+        }
+    </script>
 </head>
 <body>
     <div class="navigation">
         <ul>
-            <li><a href="#mmd">I to MMD</a></li>
-            <li><a href="#endometrial">I to Endo Ca</a></li>
-            <li><a href="#ovarian">I to Ovarian Ca</a></li>
-            <li><a href="#breast">I to Breast Ca</a></li>
+            <li><a href="#" onclick="showSection('mmd')">I to MMD</a></li>
+            <li><a href="#" onclick="showSection('endometrial')">I to Endo Ca</a></li>
+            <li><a href="#" onclick="showSection('ovarian')">I to Ovarian Ca</a></li>
+            <li><a href="#" onclick="showSection('breast')">I to Breast Ca</a></li>
         </ul>
     </div>
 
@@ -69,5 +87,11 @@
         <h2>I to Breast Ca</h2>
         <p>Content related to Intermediate exposure to Breast Cancer goes here.</p>
     </div>
+
+    <script>
+        // Show the first section by default
+        var defaultSection = document.getElementById("mmd");
+        defaultSection.classList.add("active");
+    </script>
 </body>
 </html>
