@@ -4,7 +4,7 @@ MMD with Sex Steroids in Premenopausal women
 
 Fig 2: Associations of mammographic density measures with sex steroids in premenopausal women (green: positive, grey: null, red: negative associations).
 
-{% include_relative mmd_ss_premeno_bv_menstrual_phase.html %}
+{% include_relative "mmd_ss_premeno_bv_menstrual_phase.html" %}
 
 MMD with Sex Steroids in Premenopausal women stratified by BMI categories
 
