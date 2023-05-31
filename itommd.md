@@ -18,7 +18,7 @@ Fig 4: Association of mammographic density measures with urinary sex steroids an
 
 {% include_relative mmd_urinary_ss.html %}
 
-MMD measures with sex steroids in premenopausal women stratified by Menstrual Phases
+MMD measures with sex steroids in premenopausal women stratified by Menstrual Phases. 
 
 Fig 5: Association of mammographic density measures with sex steroids in postmenopausal women (green: positive, grey: null, red: negative associations)
 
