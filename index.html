@@ -99,7 +99,7 @@
     <script>
         // Read the Markdown files using AJAX
         var xhrMMD = new XMLHttpRequest();
-        xhrMMD.open('GET', 'https://raw.githubusercontent.com/WCRF/SysRev-Metan/main/itommd.md', true);
+        xhrMMD.open('GET', 'https://raw.githubusercontent.com/WCRF/SysRev-Metan/main/itommd.html', true);
         xhrMMD.onreadystatechange = function() {
             if (xhrMMD.readyState === 4 && xhrMMD.status === 200) {
                 var markdownMMD = xhrMMD.responseText;
