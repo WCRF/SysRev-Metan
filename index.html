@@ -110,8 +110,19 @@
 <h2>MMD measures with sex steroids in premenopausal women stratified by Menstrual Phases</h2>
 <p>Fig 5: Association of mammographic density measures with sex steroids in postmenopausal women (green: positive, grey: null, red: negative associations).</p>
 {% include_relative post_menop.html %}
+    
     <script>
         // Read the Markdown files using AJAX
+        var xhrMMD = new XMLHttpRequest();
+        xhrMMD.open('GET', 'https://raw.githubusercontent.com/WCRF/SysRev-Metan/main/itommd.md', true);
+        xhrMMD.onreadystatechange = function() {
+            if (xhrMMD.readyState === 4 && xhrMMD.status === 200) {
+                var markdownMMD = xhrMMD.responseText;
+                convertMarkdownToHTML(markdownMMD, "mmd-content");
+            }
+        };
+        xhrMMD.send();
+        
         var xhrEndometrial = new XMLHttpRequest();
         xhrEndometrial.open('GET', 'https://raw.githubusercontent.com/WCRF/SysRev-Metan/main/i_to_endo_ca.md', true);
         xhrEndometrial.onreadystatechange = function() {
