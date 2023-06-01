@@ -3,5 +3,6 @@ This section is under development.
 
 
 <figure>
-    <iframe src="https://github.com/WCRF/SysRev-Metan/blob/main/trial_fig.html"></iframe>
+    <iframe src="https://wcrf.github.io/SysRev-Metan/trial_fig.html"></iframe>
 </figure>
+
