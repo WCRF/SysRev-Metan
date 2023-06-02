@@ -1,2 +1,1 @@
-
-{% include_relative https://github.com/WCRF/SysRev-Metan/blob/main/trial_fig.html %}
+{% include_relative trial_fig.html %}
